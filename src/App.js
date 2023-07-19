@@ -15,8 +15,30 @@ import {
 function App() {
   return (
     <Router>
-      <h4>comfy sloth starter</h4>
-      <Home></Home>
+      <Navbar />
+      <Sidebar />
+      <Switch>
+        <Route exact path="/home">
+          <Home />
+        </Route>
+        <Route exact path="/about">
+          <About />
+        </Route>
+        <Route exact path="/products">
+          <Products />
+        </Route>
+        <Route exact path="/cart">
+          <Cart />
+        </Route>
+        <Route exact path="/products/:id" children={<SingleProduct />} />
+        <Route exact path="/checkout">
+          <Checkout />
+        </Route>
+        <Route exact path="*">
+          <Error />
+        </Route>
+      </Switch>
+      <Footer />
     </Router>
   );
 }
