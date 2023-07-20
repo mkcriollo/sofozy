@@ -8,20 +8,18 @@ import { useUserContext } from "../context/user_context";
 
 const CartButtons = () => {
   return (
-    <Wrapper>
-      <div className="cart-container">
-        <div className="cart-btn">
-          <Link>
-            Cart
-            <FaShoppingCart></FaShoppingCart>
-            <div className="cart-value"></div>
-          </Link>
-        </div>
-        <div className="auth-btn">
-          Login
-          <FaUserPlus />
-        </div>
-      </div>
+    <Wrapper className="cart-btn-wrapper">
+      <Link className="cart-btn" to="/cart">
+        Cart
+        <span className="cart-container">
+          <FaShoppingCart></FaShoppingCart>
+          <span className="cart-value">12</span>
+        </span>
+      </Link>
+      <button type="button" className="auth-btn">
+        Login
+        <FaUserPlus />
+      </button>
     </Wrapper>
   );
 };
